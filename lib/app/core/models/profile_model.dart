@@ -2,11 +2,13 @@ import 'dart:convert';
 
 class ProfileModel {
   final String? objectId;
+  final String? email;
   final String? typeString;
   final String? typeFile;
   final bool? isActive;
   ProfileModel({
     this.objectId,
+    this.email,
     this.typeString,
     this.typeFile,
     this.isActive,
@@ -14,12 +16,14 @@ class ProfileModel {
 
   ProfileModel copyWith({
     String? objectId,
+    String? email,
     String? typeString,
     String? typeFile,
     bool? isActive,
   }) {
     return ProfileModel(
       objectId: objectId ?? this.objectId,
+      email: email ?? this.email,
       typeString: typeString ?? this.typeString,
       typeFile: typeFile ?? this.typeFile,
       isActive: isActive ?? this.isActive,
@@ -31,6 +35,9 @@ class ProfileModel {
 
     if (objectId != null) {
       result.addAll({'objectId': objectId});
+    }
+    if (email != null) {
+      result.addAll({'email': email});
     }
     if (typeString != null) {
       result.addAll({'typeString': typeString});
@@ -48,6 +55,7 @@ class ProfileModel {
   factory ProfileModel.fromMap(Map<String, dynamic> map) {
     return ProfileModel(
       objectId: map['objectId'],
+      email: map['email'],
       typeString: map['typeString'],
       typeFile: map['typeFile'],
       isActive: map['isActive'],
@@ -61,7 +69,7 @@ class ProfileModel {
 
   @override
   String toString() {
-    return 'ProfileModel(objectId: $objectId, typeString: $typeString, typeFile: $typeFile, isActive: $isActive)';
+    return 'ProfileModel(objectId: $objectId, email: $email, typeString: $typeString, typeFile: $typeFile, isActive: $isActive)';
   }
 
   @override
@@ -70,6 +78,7 @@ class ProfileModel {
 
     return other is ProfileModel &&
         other.objectId == objectId &&
+        other.email == email &&
         other.typeString == typeString &&
         other.typeFile == typeFile &&
         other.isActive == isActive;
@@ -78,6 +87,7 @@ class ProfileModel {
   @override
   int get hashCode {
     return objectId.hashCode ^
+        email.hashCode ^
         typeString.hashCode ^
         typeFile.hashCode ^
         isActive.hashCode;

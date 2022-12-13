@@ -1,27 +1,26 @@
 import 'dart:developer';
 
-import 'package:dotenv/dotenv.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 
 class ConnectB4A {
   String _appId = '1';
   String _clientKey = '1';
 
-  getCredentials() {
-    var env = DotEnv()..load();
-    _appId = env['appId'] ?? _appId;
-    _clientKey = env['clientKey'] ?? _clientKey;
+  Future<void> getCredentials() async {
+    await dotenv.load(fileName: ".env");
+    _appId = dotenv.env['appId'] ?? _appId;
+    _clientKey = dotenv.env['clientKey'] ?? _clientKey;
   }
 
   Future<bool> initialize({bool debug = false}) async {
-    getCredentials();
+    await getCredentials();
     String serverUrl = 'https://parseapi.back4app.com';
     await Parse().initialize(
       _appId,
       serverUrl,
       clientKey: _clientKey,
       debug: debug,
-      // hideCompletAppIdAndClientKey: true,
     );
     return await healthCheck();
   }

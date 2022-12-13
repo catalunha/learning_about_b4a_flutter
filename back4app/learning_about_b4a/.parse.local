@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "_default": {
+      "link": "learning_about_b4a"
+    },
+    "learning_about_b4a": {
+      "applicationId": "x4uHx8hJECtAPiKo4Z2f8IK9OUKRtcuUBBaUBHM9"
+    }
+  }
+}

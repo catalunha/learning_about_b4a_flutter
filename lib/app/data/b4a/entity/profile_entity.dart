@@ -7,6 +7,7 @@ class ProfileEntity {
   ProfileModel fromParse(ParseObject parseObject) {
     ProfileModel profileModel = ProfileModel(
       objectId: parseObject.objectId!,
+      email: parseObject.get('email'),
       typeString: parseObject.get('typeString'),
       typeFile: parseObject.get('typeFile')?.get('url'),
       isActive: parseObject.get('isActive'),
@@ -22,9 +23,9 @@ class ProfileEntity {
     if (profileModel.typeString != null) {
       profileParseObject.set('typeString', profileModel.typeString);
     }
-    if (profileModel.isActive != null) {
-      profileParseObject.set('isActive', profileModel.isActive);
-    }
+    // if (profileModel.isActive != null) {
+    //   profileParseObject.set('isActive', profileModel.isActive);
+    // }
     return profileParseObject;
   }
 }

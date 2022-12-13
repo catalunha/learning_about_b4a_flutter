@@ -17,9 +17,9 @@ class App extends StatelessWidget {
       //   GlobalWidgetsLocalizations.delegate,
       //   GlobalCupertinoLocalizations.delegate,
       // ],
-      supportedLocales: const [
-        Locale('pt', 'BR'),
-      ],
+      // supportedLocales: const [
+      //   Locale('pt', 'BR'),
+      // ],
       initialBinding: SplashDependencies(),
       getPages: Routes.pageList,
       initialRoute: Routes.splash,

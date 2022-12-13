@@ -8,8 +8,8 @@ class AppErrorCode {
   String code = '';
   String message = '';
   decode() {
-    code = 'Fluxus Erro: $codeNumber';
-    message = _appCodes[code]!;
+    code = 'App Error code: $codeNumber';
+    message = _appCodes[codeNumber]!;
   }
 
   final Map<int, String> _appCodes = {

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fluxus/app/routes.dart';
-import 'package:fluxus/app/view/controllers/splash/splash_controller.dart';
-import 'package:fluxus/app/view/controllers/home/home_controller.dart';
 import 'package:get/get.dart';
+import 'package:learning_about_b4a_flutter/app/routes.dart';
+import 'package:learning_about_b4a_flutter/app/view/controllers/splash/splash_controller.dart';
 
 class PopMenuButtonPhotoUser extends StatelessWidget {
-  final HomeController _homeController = Get.find();
   final SplashController _splashController = Get.find();
 
   PopMenuButtonPhotoUser({Key? key}) : super(key: key);
@@ -32,7 +30,7 @@ class PopMenuButtonPhotoUser extends StatelessWidget {
             child: TextButton.icon(
               label: const Text('Sair'),
               onPressed: () {
-                _homeController.logout();
+                _splashController.logout();
               },
               icon: const Icon(Icons.exit_to_app),
             ),
@@ -44,16 +42,14 @@ class PopMenuButtonPhotoUser extends StatelessWidget {
           message: 'Click para opções',
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
-            child: _splashController.userModel?.profile?.photo != null
+            child: _splashController.userModel?.profile?.typeFile != null
                 ? Image.network(
-                    // 'https://parsefiles.back4app.com/ZuF4FI4dZUN4i9ObIoK6LvTuoIuVFNsVAMRjYNkX/0b28345ecb39e2177d1746f80246ed70_woman2.png',
-                    _splashController.userModel!.profile!.photo!,
+                    _splashController.userModel!.profile!.typeFile!,
                     height: 30,
                     width: 30,
                     errorBuilder: (_, __, ___) {
                       return const Icon(
                         Icons.person,
-                        // color: Colors.black,
                       );
                     },
                   )

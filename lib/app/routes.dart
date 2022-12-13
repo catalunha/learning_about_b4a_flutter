@@ -1,4 +1,10 @@
 import 'package:get/get.dart';
+import 'package:learning_about_b4a_flutter/app/view/controllers/splash/splash_dependencies.dart';
+import 'package:learning_about_b4a_flutter/app/view/controllers/user/login/login_dependencies.dart';
+import 'package:learning_about_b4a_flutter/app/view/controllers/user/register/email/user_register_email_dependencies.dart';
+import 'package:learning_about_b4a_flutter/app/view/pages/splash/splash_page.dart';
+import 'package:learning_about_b4a_flutter/app/view/pages/user/login/auth_login_page.dart';
+import 'package:learning_about_b4a_flutter/app/view/pages/user/register/email/user_register_email.page.dart';
 
 class Routes {
   static const splash = '/';
@@ -12,8 +18,7 @@ class Routes {
   static const profile = '/user/profile';
 
   static const genreAddEdit = '/genre/addedit';
-  static const genreSearch = '/genre/search';
-  static const genreList = '/expect/list';
+  static const genreList = '/genre/list';
 
   static final pageList = [
     GetPage(
@@ -31,15 +36,15 @@ class Routes {
       binding: UserRegisterEmailDependencies(),
       page: () => AuthRegisterEmailPage(),
     ),
-    GetPage(
-      name: Routes.genreAddEdit,
-      binding: GenreAddEditDependencies(),
-      page: () => GenreAddEditPage(),
-    ),
-    GetPage(
-      name: Routes.genreList,
-      binding: GenreSearchDependencies(),
-      page: () => GenreSearchListPage(),
-    ),
+    // GetPage(
+    //   name: Routes.genreAddEdit,
+    //   binding: GenreAddEditDependencies(),
+    //   page: () => GenreAddEditPage(),
+    // ),
+    // GetPage(
+    //   name: Routes.genreList,
+    //   binding: GenreSearchDependencies(),
+    //   page: () => GenreSearchListPage(),
+    // ),
   ];
 }

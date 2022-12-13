@@ -10,6 +10,13 @@ class SplashPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
+          // Image.asset(
+          //   AppAssets.b4aLogo,
+          //   // height: 200,
+          // ),
+          // const SizedBox(
+          //   height: 20,
+          // ),
           Text('Analisando seus dados...'),
           SizedBox(
             height: 20,

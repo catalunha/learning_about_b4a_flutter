@@ -6,22 +6,21 @@ import 'package:learning_about_b4a_flutter/app/view/pages/profile/edit/part/user
 import 'package:learning_about_b4a_flutter/app/view/pages/utils/app_textformfield.dart';
 import 'package:validatorless/validatorless.dart';
 
-class TeamEditPage extends StatefulWidget {
-  TeamEditPage({Key? key}) : super(key: key);
+class ProfileEditPage extends StatefulWidget {
+  ProfileEditPage({Key? key}) : super(key: key);
   final _profileController = Get.find<ProfileEditController>();
 
   @override
-  _TeamEditPageState createState() => _TeamEditPageState();
+  _ProfileEditPageState createState() => _ProfileEditPageState();
 }
 
-class _TeamEditPageState extends State<TeamEditPage> {
+class _ProfileEditPageState extends State<ProfileEditPage> {
   final dateFormat = DateFormat('dd/MM/y');
 
   final _formKey = GlobalKey<FormState>();
   final _typeStringTEC = TextEditingController();
   @override
   void initState() {
-    print('+++ initState +++');
     super.initState();
     _typeStringTEC.text = widget._profileController.profile?.typeString ?? "";
   }
@@ -57,8 +56,7 @@ class _TeamEditPageState extends State<TeamEditPage> {
                 child: Column(
                   children: [
                     Text(
-                      'Id: ${widget._profileController.profile!.objectId}',
-                      style: const TextStyle(fontSize: 8),
+                      'Profile.objectId: ${widget._profileController.profile!.objectId}',
                     ),
                     const SizedBox(height: 5),
                     AppTextFormField(

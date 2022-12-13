@@ -1,7 +1,11 @@
 import 'package:get/get.dart';
+import 'package:learning_about_b4a_flutter/app/view/controllers/home/home_dependencies.dart';
+import 'package:learning_about_b4a_flutter/app/view/controllers/profile/team/edit/profile_edit_dependencies.dart';
 import 'package:learning_about_b4a_flutter/app/view/controllers/splash/splash_dependencies.dart';
 import 'package:learning_about_b4a_flutter/app/view/controllers/user/login/login_dependencies.dart';
 import 'package:learning_about_b4a_flutter/app/view/controllers/user/register/email/user_register_email_dependencies.dart';
+import 'package:learning_about_b4a_flutter/app/view/pages/home/home_page.dart';
+import 'package:learning_about_b4a_flutter/app/view/pages/profile/edit/profile_edit_page.dart';
 import 'package:learning_about_b4a_flutter/app/view/pages/splash/splash_page.dart';
 import 'package:learning_about_b4a_flutter/app/view/pages/user/login/auth_login_page.dart';
 import 'package:learning_about_b4a_flutter/app/view/pages/user/register/email/user_register_email.page.dart';
@@ -35,6 +39,17 @@ class Routes {
       name: Routes.userRegisterEmail,
       binding: UserRegisterEmailDependencies(),
       page: () => AuthRegisterEmailPage(),
+    ),
+    GetPage(
+      name: Routes.home,
+      binding: HomeDependencies(),
+      page: () => HomePage(),
+      children: const [],
+    ),
+    GetPage(
+      name: Routes.profile,
+      binding: ProfileEditDependencies(),
+      page: () => ProfileEditPage(),
     ),
     // GetPage(
     //   name: Routes.genreAddEdit,

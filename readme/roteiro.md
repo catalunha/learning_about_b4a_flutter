@@ -1,6 +1,13 @@
 # classes iniciais 
 splash, models de user e profile para apenas login.
 
+# class Profile
+criar class Profile com os campos
+criar pointer em user para Profile
+
+# email verification
+
+
 # back4app
 
 catalunha@pop-os:~/myapp/learning_about_b4a_flutter/back4app$ b4a new
@@ -34,3 +41,24 @@ Please type "(b)lank" if you wish to setup a blank project, otherwise press ENTE
 Successfully downloaded Cloud Code to "/home/catalunha/myapp/learning_about_b4a_flutter/back4app/learning_about_b4a".
 Successfully configured email for current project to: "catalunha.mj@gmail.com"
 
+# build web
+catalunha@pop-os:~/myapp/learning_about_b4a_flutter$ flutter build web
+
+# link build/web in cloud
+ln -s /home/catalunha/myapp/learning_about_b4a_flutter/build/web public
+
+catalunha@pop-os:~/myapp/learning_about_b4a_flutter/back4app/learning_about_b4a$ ls -la
+total 20
+drwxr-xr-x 3 catalunha catalunha 4096 Dec 13 09:20 .
+drwxrwxr-x 3 catalunha catalunha 4096 Dec 13 08:10 ..
+drwxr-xr-x 3 catalunha catalunha 4096 Dec 13 08:15 cloud
+-rw------- 1 catalunha catalunha  187 Dec 13 08:10 .parse.local
+-rw------- 1 catalunha catalunha  100 Dec 13 08:10 .parse.project
+lrwxrwxrwx 1 catalunha catalunha   58 Dec 13 09:20 public -> /home/catalunha/myapp/learning_about_b4a_flutter/build/web
+
+# deploy 
+
+catalunha@pop-os:~/myapp/learning_about_b4a_flutter/back4app/learning_about_b4a$ b4a deploy
+
+# telas
+mostrar telas na seguencia de email verification e inativo.

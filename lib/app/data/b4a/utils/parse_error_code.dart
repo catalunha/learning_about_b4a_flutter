@@ -17,10 +17,10 @@ class ParseErrorCode {
         name: 'ParseErrorCodes');
     log('--- --- ---', name: 'ParseErrorCodes');
     if (_appCodes.containsKey(parseError.code)) {
-      code = 'Parse Erro: ${parseError.code}';
+      code = 'Parse Error code: ${parseError.code}';
       message = _appCodes[parseError.code]!;
     } else {
-      code = 'Parse Erro: ${parseError.code}';
+      code = 'Parse Error code: ${parseError.code}';
       message = parseError.message;
     }
   }

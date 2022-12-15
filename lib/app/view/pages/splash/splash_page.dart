@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:learning_about_b4a_flutter/app/view/controllers/splash/splash_controller.dart';
 import 'package:learning_about_b4a_flutter/app/view/pages/utils/app_assets.dart';
 
 class SplashPage extends StatelessWidget {
-  const SplashPage({Key? key}) : super(key: key);
-
+  SplashPage({Key? key}) : super(key: key);
+  var splashController = Get.find<SplashController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

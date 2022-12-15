@@ -15,7 +15,7 @@ class ConnectB4A {
 
   Future<bool> initialize({bool debug = false}) async {
     try {
-      // await getCredentials();
+      await getCredentials();
       String serverUrl = 'https://parseapi.back4app.com';
       await Parse().initialize(
         _appId,

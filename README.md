@@ -1,23 +1,26 @@
 # learning_about_b4a_flutter
 
-Para entender melhor este projeto é importantíssimo assistir a primeira parte disponivel neste repositorio:
+Aqui compartilharei com você minhas experiências e aceito suas sugestões de como realizar um login utilizando o back4app.com. Este projeto servirá também pra eu refinar este código para outras projetos. No final aprenderemos juntos... 
+
+Para entender melhor este repositório é importantíssimo assistir a primeira parte disponivel neste outro repositorio:
 
 https://github.com/catalunha/learning_about_b4a_dart
 
-Em seguida assista aos videos desta playlist, , nesta seguencia:
-1. IntroducaoAoProjetoFlutter
-2. UserProfile
-3. EmailVerified
-4. App
-5. Pubspec
-6. Splash
-7. Login
-8. RegisterEmail
-9. Home
-10. EditProfile
-11. List
-12. Teste
-13. Cloud Code e Web Hosting
+Em seguida assista aos videos desta playlist, https://www.youtube.com/playlist?list=PL-rdGqWQhUziIYWzcd4x3dJjp_qiWiDYt, nesta seguencia. Ou acesse cada video individualmente.
+
+1. Introdução (https://youtu.be/VBzItwVTPDY) 
+2. Tables User & Profile (https://youtu.be/i0l-JqZqJuo)
+3. EmailVerified (https://youtu.be/rAT1oabrs-4)
+4. App (https://youtu.be/Qk9uY8IXaSA)
+5. Pubspec (https://youtu.be/9BWDN1TElgo)
+6. Splash (https://youtu.be/H0CVXHlrVpc)
+7. Login (https://youtu.be/_rlj9Uahwow)
+8. RegisterEmail (https://youtu.be/7Dyq1L9Fqys)
+9. Home (https://youtu.be/iBcpLiu_kPc)
+10. EditProfile (https://youtu.be/1a7qbahK6Pg)
+11. List (https://youtu.be/N_1xluOm2oI)
+12. Testes (https://youtu.be/ScPnIVKXAWc)
+13. Cloud Code e Web Hosting (https://youtu.be/uY72rdCb9sI)
 
 A seguir apresento algumas anotações utilizadas nos videos e registrada aqui pra facilitar.
 
@@ -177,4 +180,13 @@ Depois subir o deploy
 catalunha@pop-os:~/myapp/learning_about_b4a_flutter/back4app/learning_about_b4a$ b4a deploy
 
 # .env
-Ainda estou resolvendo a forma correto deste item. Mas pode ser colocado em assets/.env e atualizado do arquivo de ConnectB4A.
+Ainda estou resolvendo a forma correta para colocar as variáveis de ambiente no b4a e obté-las no Flutter. 
+Mas após o deploy envie individualmente o arquivo .env para public/assets no hosting do b4a
+![Tela](readme/web/f4.png)
+Assim a aplicação conectará perfeitamente ao banco de dados.
+
+
+# issues & Tickets
+
+help.back4app.com/hc/requests/32443
+

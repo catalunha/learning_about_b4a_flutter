@@ -25,7 +25,7 @@ class Routes {
     GetPage(
       name: Routes.splash,
       binding: SplashDependencies(),
-      page: () => const SplashPage(),
+      page: () => SplashPage(),
     ),
     GetPage(
       name: Routes.userLogin,

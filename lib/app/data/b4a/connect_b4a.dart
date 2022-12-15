@@ -14,15 +14,19 @@ class ConnectB4A {
   }
 
   Future<bool> initialize({bool debug = false}) async {
-    await getCredentials();
-    String serverUrl = 'https://parseapi.back4app.com';
-    await Parse().initialize(
-      _appId,
-      serverUrl,
-      clientKey: _clientKey,
-      debug: debug,
-    );
-    return await healthCheck();
+    try {
+      // await getCredentials();
+      String serverUrl = 'https://parseapi.back4app.com';
+      await Parse().initialize(
+        _appId,
+        serverUrl,
+        clientKey: _clientKey,
+        debug: debug,
+      );
+      return await healthCheck();
+    } catch (e) {
+      return false;
+    }
   }
 
   /// No healthCheck se o valor de appId ou clientKey estiver errado

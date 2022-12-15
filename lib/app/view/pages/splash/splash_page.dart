@@ -11,13 +11,14 @@ class SplashPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Text('Bem vindo ao '),
+          const Text('Learning about back4app em Flutter'),
+          const SizedBox(height: 20),
           Image.asset(
             AppAssets.b4aLogo,
             // height: 200,
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           const Text('Analisando seus dados...'),
           const SizedBox(
             height: 20,

@@ -12,14 +12,6 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Learning about B4A',
       theme: ThemeData.dark(),
-      // localizationsDelegates: const [
-      //   GlobalMaterialLocalizations.delegate,
-      //   GlobalWidgetsLocalizations.delegate,
-      //   GlobalCupertinoLocalizations.delegate,
-      // ],
-      // supportedLocales: const [
-      //   Locale('pt', 'BR'),
-      // ],
       initialBinding: SplashDependencies(),
       getPages: Routes.pageList,
       initialRoute: Routes.splash,

@@ -20,7 +20,7 @@ class PopMenuButtonPhotoUser extends StatelessWidget {
               label: const Text('Editar perfil'),
               onPressed: () {
                 Get.back();
-                Get.toNamed(Routes.profile,
+                Get.toNamed(Routes.userProfile,
                     arguments: _splashController.userModel!.profile);
               },
               icon: const Icon(Icons.person_outline_outlined),

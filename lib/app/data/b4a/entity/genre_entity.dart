@@ -67,7 +67,5 @@ class GenreEntity {
     for (var field in unsetFields) {
       await parseObject.unset(field);
     }
-
-    // return parseObject;
   }
 }

@@ -32,7 +32,6 @@ class SplashController extends GetxController with MessageMixin {
   @override
   void onInit() async {
     messageListener(_message);
-
     super.onInit();
     await startApp();
   }
@@ -85,15 +84,6 @@ class SplashController extends GetxController with MessageMixin {
       return false;
     } else {
       var profileModel = await updateUserProfile();
-      // var profileField = parseUser!.get('profile');
-      // var profileRepositoryB4a = ProfileRepositoryB4a();
-
-      // var profileModel =
-      //     await profileRepositoryB4a.readById(profileField.objectId);
-      // officeIdList.clear();
-      // if (profileModel!.office != null && profileModel.office!.isNotEmpty) {
-      //   officeIdList.addAll(profileModel.office!.map((e) => e.id!).toList());
-      // }
       userModel = UserModel(
         objectId: parseUser!.objectId!,
         email: parseUser!.emailAddress!,

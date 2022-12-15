@@ -2,21 +2,21 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learning_about_b4a_flutter/app/routes.dart';
-import 'package:learning_about_b4a_flutter/app/view/controllers/user/login/login_controller.dart';
+import 'package:learning_about_b4a_flutter/app/view/controllers/user/login/user_login_controller.dart';
 import 'package:learning_about_b4a_flutter/app/view/pages/utils/app_button.dart';
 import 'package:learning_about_b4a_flutter/app/view/pages/utils/app_textformfield.dart';
 import 'package:validatorless/validatorless.dart';
 
-class AuthLoginPage extends StatefulWidget {
-  final LoginController _loginController = Get.find<LoginController>();
+class UserLoginPage extends StatefulWidget {
+  final UserLoginController _loginController = Get.find<UserLoginController>();
 
-  AuthLoginPage({Key? key}) : super(key: key);
+  UserLoginPage({Key? key}) : super(key: key);
 
   @override
-  State<AuthLoginPage> createState() => _AuthLoginPageState();
+  State<UserLoginPage> createState() => _UserLoginPageState();
 }
 
-class _AuthLoginPageState extends State<AuthLoginPage> {
+class _UserLoginPageState extends State<UserLoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailTec = TextEditingController();
   final _passwordTec = TextEditingController();
@@ -37,8 +37,6 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppAppbar(),
-      // backgroundColor: Colors.white,
       body: LayoutBuilder(
         builder: (_, constrainsts) {
           return Center(
@@ -61,7 +59,6 @@ class _AuthLoginPageState extends State<AuthLoginPage> {
                             'Login',
                             style: context.textTheme.headline6?.copyWith(
                               fontWeight: FontWeight.bold,
-                              // color: context.theme.primaryColorDark,
                             ),
                           ),
                           const SizedBox(

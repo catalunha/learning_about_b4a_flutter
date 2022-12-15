@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class UserProfilePhoto extends StatefulWidget {
-  // final UserProfileController _profileController = Get.find();
   final String? photoUrl;
   final Function(XFile?) setXFile;
 
@@ -71,21 +70,15 @@ class _UserProfilePhotoState extends State<UserProfilePhoto> {
                   borderRadius: BorderRadius.circular(10.0),
                   child: Image.network(
                     widget.photoUrl!,
-                    // loadingBuilder: (_, __, ___) {
-                    //   return const Center(
-                    //       child: CircularProgressIndicator());
-                    // },
                     height: 100,
                     width: 100,
                     errorBuilder: (BuildContext context, Object exception,
                         StackTrace? stackTrace) {
-                      //print('error 3');
                       return errorBuilderWidget();
                     },
                   ),
                 ),
       onTap: () async {
-        //print('aqui...');
         final XFile? pickedFile =
             await _picker.pickImage(source: ImageSource.gallery);
 

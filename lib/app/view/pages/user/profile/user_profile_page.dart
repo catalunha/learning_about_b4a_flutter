@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:learning_about_b4a_flutter/app/view/controllers/profile/team/edit/profile_edit_controller.dart';
-import 'package:learning_about_b4a_flutter/app/view/pages/profile/edit/part/user_profile_photo.dart';
+import 'package:learning_about_b4a_flutter/app/view/controllers/user/profile/user_profile_controller.dart';
+import 'package:learning_about_b4a_flutter/app/view/pages/user/profile/part/user_profile_photo.dart';
 import 'package:learning_about_b4a_flutter/app/view/pages/utils/app_textformfield.dart';
 import 'package:validatorless/validatorless.dart';
 
-class ProfileEditPage extends StatefulWidget {
-  ProfileEditPage({Key? key}) : super(key: key);
-  final _profileController = Get.find<ProfileEditController>();
+class UserProfilePage extends StatefulWidget {
+  UserProfilePage({Key? key}) : super(key: key);
+  final _profileController = Get.find<UserProfileController>();
 
   @override
-  _ProfileEditPageState createState() => _ProfileEditPageState();
+  _UserProfilePageState createState() => _UserProfilePageState();
 }
 
-class _ProfileEditPageState extends State<ProfileEditPage> {
+class _UserProfilePageState extends State<UserProfilePage> {
   final dateFormat = DateFormat('dd/MM/y');
 
   final _formKey = GlobalKey<FormState>();

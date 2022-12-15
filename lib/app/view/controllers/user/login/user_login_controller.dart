@@ -7,12 +7,13 @@ import 'package:learning_about_b4a_flutter/app/view/controllers/utils/loader_mix
 import 'package:learning_about_b4a_flutter/app/view/controllers/utils/message_mixin.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 
-class LoginController extends GetxController with LoaderMixin, MessageMixin {
+class UserLoginController extends GetxController
+    with LoaderMixin, MessageMixin {
   final _loading = false.obs;
   final _message = Rxn<MessageModel>();
 
   final UserRepository _userRepository;
-  LoginController({required UserRepository userRepository})
+  UserLoginController({required UserRepository userRepository})
       : _userRepository = userRepository;
 
   @override

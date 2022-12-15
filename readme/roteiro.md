@@ -1,35 +1,92 @@
-# classes iniciais 
-splash, models de user e profile para apenas login.
+# Projeto Dart
 
-# class Profile
-criar class Profile com os campos
-criar pointer em user para Profile
+https://github.com/catalunha/learning_about_b4a_dart
 
-# email verification
+# Apresentação do projeto Flutter
+
+Splash | Login | Cadastro
+---|---|---
+![Tela](splash/f01.png)|![Tela](login/f01.png)|![Tela](register/f01.png)|
+
+Email Não verificado | Acesso não liberado | Email ja cadastrado
+---|---|---
+![Tela](login/f02.png)|![Tela](login/f03.png)|![Tela](register/f02.png)|
+
+Home | Editar profile | Listar tabela
+---|---|---
+![Tela](home/f01.png)|![Tela](profile/f04.png)|![Tela](list/f01.png)|
+
+--- PAREI AQUI ---
+
+# b4a - Class Profile
+Criar table Profile com os campos [email,typeString,typeFile,isActive]
+![Tela](profile/f01.png)
 
 
-# back4app
+# b4a - Class User
+Criar campo [profile] e apontar para Profile
+Destacar a importancia do campo emailVerified
+![Tela](user/f01.png)
+
+# b4a Config - Email Verification
+Acessar Server Settings e configurar email verification
+![Tela01](emailVerification/f01.png)
+Exemplo de configuração para verificação de email
+![Tela01](emailVerification/f02.png)
+![Tela01](emailVerification/f03.png)
+Exemplo de configuração para recuperação de senha
+![Tela01](emailVerification/f04.png)
+Email recebido quando usuario cadastrado.
+![Tela01](emailVerification/f05.png)
+Email Verificado e atualizado no database do back4app
+![Tela01](emailVerification/f06.png)
+Antes da verificação de email
+![Tela01](user/f01.png)
+Após a verificação de email
+![Tela01](user/f02.png)
+
+# App Flutter - Classes
+1. Criar projeto em Flutter  no terminal
+flutter create --project-name=learning_about_b4a_flutter --org br.catalunhamj --platforms android,web ./learning_about_b4a_flutter
+2. Configurar pubspec.yaml
+   1. images
+   2. .env com .gitignore
+3. lib/main.dart
+4. lib/app/app.dart
+5. lib/app/routes.dart
+6. lib/app/core
+   1. lib/app/core/models
+      1. lib/app/core/models/user_model.dart
+      2. lib/app/core/models/profile_model.dart
+   2. lib/app/core/utils
+7. lib/app/data/repositories
+8. lib/app/data/b4a
+   1. lib/app/data/b4a/connect_b4a.dart
+   2. lib/app/data/b4a/entity
+   3. lib/app/data/b4a/table
+   4. lib/app/data/b4a/utils
+9. splash
+   1.  lib/app/view/controllers/splash
+   2.  lib/app/view/pages/splash
+10. register
+11. login
+12. home
+    1.  profile
+13. list
+
+
+# App Flutter - build web
+catalunha@pop-os:~/myapp/learning_about_b4a_flutter$ flutter build web
+![Tela](web/f1.png)
+
+# b4a csi - Create project
 
 catalunha@pop-os:~/myapp/learning_about_b4a_flutter/back4app$ b4a new
 
 catalunha@pop-os:~/myapp/learning_about_b4a_flutter/back4app$ b4a new
 Would you like to create a new app, or add Cloud Code to an existing app?
 Type "(n)ew" or "(e)xisting": e
-1:      calcubes
-2:      cemec-aluno
-3:      cemec-bens
-4:      classfrase
-5:      eventus
-6:      fluxus
 7:      learning_about_b4a
-8:      learning_about_b4a_2
-9:      marketplace01
-10:     mkp01manager
-11:     noctua
-12:     numbersandcalcs
-13:     sisda
-14:     splitcalc
-15:     treeclassfrase
 Select an App to add to config: 7
 
 Please enter the name of the folder where we can download the latest deployed
@@ -41,10 +98,8 @@ Please type "(b)lank" if you wish to setup a blank project, otherwise press ENTE
 Successfully downloaded Cloud Code to "/home/catalunha/myapp/learning_about_b4a_flutter/back4app/learning_about_b4a".
 Successfully configured email for current project to: "catalunha.mj@gmail.com"
 
-# build web
-catalunha@pop-os:~/myapp/learning_about_b4a_flutter$ flutter build web
 
-# link build/web in cloud
+# link build/web in b4a_project/public
 ln -s /home/catalunha/myapp/learning_about_b4a_flutter/build/web public
 
 catalunha@pop-os:~/myapp/learning_about_b4a_flutter/back4app/learning_about_b4a$ ls -la
@@ -56,9 +111,32 @@ drwxr-xr-x 3 catalunha catalunha 4096 Dec 13 08:15 cloud
 -rw------- 1 catalunha catalunha  100 Dec 13 08:10 .parse.project
 lrwxrwxrwx 1 catalunha catalunha   58 Dec 13 09:20 public -> /home/catalunha/myapp/learning_about_b4a_flutter/build/web
 
-# deploy 
+# Cloud function
+```js
+Parse.Cloud.afterSave(Parse.User, async (req) => {
+  let user = req.object;
+  if (user.get('profile') === undefined) {
+    const profile = new Parse.Object("Profile");
+    profile.set('email', user.get('email'));
+    let profileResult = await profile.save(null, { useMasterKey: true });
+    user.set('profile', profileResult);
+    await user.save(null, { useMasterKey: true });
+    console.log(`afterSave Parse.User: ${user.id} Created profile.`);
+  }
+});
 
+Parse.Cloud.afterDelete(Parse.User, async (req) => {
+  let user = req.object;
+  console.log(`afterDelete Parse.User: ${user.id}`);
+  let profileId = user.get('profile').id;
+  console.log(`deleting Profile: ${profileId}`);
+  const profile = new Parse.Object("Profile");
+  profile.id = profileId;
+  await profile.destroy({ useMasterKey: true });
+});
+```
+# b4a deploy
+Lembre-se sempre de construir o build primeiro
+catalunha@pop-os:~/myapp/learning_about_b4a_flutter$ flutter build web
+Depois subir o deploy
 catalunha@pop-os:~/myapp/learning_about_b4a_flutter/back4app/learning_about_b4a$ b4a deploy
-
-# telas
-mostrar telas na seguencia de email verification e inativo.

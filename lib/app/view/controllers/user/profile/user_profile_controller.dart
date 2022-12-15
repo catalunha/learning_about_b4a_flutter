@@ -9,10 +9,10 @@ import 'package:learning_about_b4a_flutter/app/view/controllers/splash/splash_co
 import 'package:learning_about_b4a_flutter/app/view/controllers/utils/loader_mixin.dart';
 import 'package:learning_about_b4a_flutter/app/view/controllers/utils/message_mixin.dart';
 
-class ProfileEditController extends GetxController
+class UserProfileController extends GetxController
     with LoaderMixin, MessageMixin {
   final ProfileRepository _profileRepository;
-  ProfileEditController({
+  UserProfileController({
     required ProfileRepository profileRepository,
   }) : _profileRepository = profileRepository;
 

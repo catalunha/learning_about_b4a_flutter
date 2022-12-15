@@ -6,16 +6,16 @@ import 'package:learning_about_b4a_flutter/app/view/pages/utils/app_button.dart'
 import 'package:learning_about_b4a_flutter/app/view/pages/utils/app_textformfield.dart';
 import 'package:validatorless/validatorless.dart';
 
-class AuthRegisterEmailPage extends StatefulWidget {
+class UserRegisterEmailPage extends StatefulWidget {
   final _authRegisterEmailController = Get.find<UserRegisterEmailController>();
 
-  AuthRegisterEmailPage({Key? key}) : super(key: key);
+  UserRegisterEmailPage({Key? key}) : super(key: key);
 
   @override
-  State<AuthRegisterEmailPage> createState() => _AuthRegisterEmailPageState();
+  State<UserRegisterEmailPage> createState() => _UserRegisterEmailPageState();
 }
 
-class _AuthRegisterEmailPageState extends State<AuthRegisterEmailPage> {
+class _UserRegisterEmailPageState extends State<UserRegisterEmailPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailEC = TextEditingController();
   final _phoneEC = TextEditingController();
@@ -32,8 +32,6 @@ class _AuthRegisterEmailPageState extends State<AuthRegisterEmailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(),
-      // backgroundColor: Colors.white,
       body: LayoutBuilder(
         builder: (_, constrainsts) {
           return Center(
@@ -56,7 +54,6 @@ class _AuthRegisterEmailPageState extends State<AuthRegisterEmailPage> {
                             'Cadastro',
                             style: context.textTheme.headline6?.copyWith(
                               fontWeight: FontWeight.bold,
-                              // color: context.theme.primaryColorDark,
                             ),
                           ),
                           const Text(

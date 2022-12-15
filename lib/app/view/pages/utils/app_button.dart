@@ -22,6 +22,9 @@ class AppButton extends StatelessWidget {
       height: height,
       child: ElevatedButton(
         onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          shape: const StadiumBorder(),
+        ),
         child: Text(
           label,
           style: const TextStyle(
@@ -29,8 +32,6 @@ class AppButton extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        style: ElevatedButton.styleFrom(
-            shape: const StadiumBorder(), primary: color),
       ),
     );
   }

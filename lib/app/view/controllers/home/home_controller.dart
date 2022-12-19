@@ -189,7 +189,6 @@ class HomeController extends GetxController with LoaderMixin, MessageMixin {
     PublisherSearch publisherSearch = PublisherSearch();
     var dataList = <String>[];
 
-    publisherSearch.getObject('5iLu1JOO9x');
     dataList = await publisherSearch.getAll();
 
     Get.to(() => ListPage(

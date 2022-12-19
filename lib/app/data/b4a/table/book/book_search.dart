@@ -24,10 +24,6 @@ class BookSearch {
         list.add(await BookEntity().toModel(element));
       }
     }
-    log('... queryBuilderIncludeObject ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
-    }
     log('--- queryBuilderIncludeObject ---');
     return list.map((e) => e.toString()).toList();
   }
@@ -46,10 +42,6 @@ class BookSearch {
       for (var element in apiResponse.results!) {
         list.add(await BookEntity().toModel(element));
       }
-    }
-    log('... queryBuilderWhereEqualToRelation ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
     }
     log('--- queryBuilderWhereEqualToRelation ---');
     return list.map((e) => e.toString()).toList();
@@ -73,10 +65,6 @@ class BookSearch {
         list.add(await BookEntity().toModel(element));
       }
     }
-    log('... queryBuilderWhereMatchesQuery ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
-    }
     log('--- queryBuilderWhereMatchesQuery ---');
     return list.map((e) => e.toString()).toList();
   }
@@ -99,10 +87,6 @@ class BookSearch {
       for (var element in apiResponse.results!) {
         list.add(await BookEntity().toModel(element));
       }
-    }
-    log('... queryBuilderWhereDoesNotMatchQuery ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
     }
     log('--- queryBuilderWhereDoesNotMatchQuery ---');
     return list.map((e) => e.toString()).toList();

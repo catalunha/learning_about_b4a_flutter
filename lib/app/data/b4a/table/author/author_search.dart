@@ -26,10 +26,6 @@ class AuthorSearch {
         list.add(AuthorEntity().toModel(element));
       }
     }
-    log('... queryBuilderIncludeObject ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
-    }
     log('--- queryBuilderIncludeObject ---');
     return list.map((e) => e.toString()).toList();
   }
@@ -50,10 +46,6 @@ class AuthorSearch {
       for (var element in apiResponse.results!) {
         list.add(AuthorEntity().toModel(element));
       }
-    }
-    log('... queryBuilderWhereEqualToPointer ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
     }
     log('--- queryBuilderWhereEqualToPointer ---');
     return list.map((e) => e.toString()).toList();
@@ -85,10 +77,6 @@ class AuthorSearch {
         list.add(AuthorEntity().toModel(element));
       }
     }
-    log('... queryBuilderWhereMatchesQuery ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
-    }
     log('--- queryBuilderWhereMatchesQuery ---');
     return list.map((e) => e.toString()).toList();
   }
@@ -112,10 +100,6 @@ class AuthorSearch {
       for (var element in apiResponse.results!) {
         list.add(AuthorEntity().toModel(element));
       }
-    }
-    log('... queryBuilderWhereDoesNotMatchQuery ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
     }
     log('--- queryBuilderWhereDoesNotMatchQuery ---');
     return list.map((e) => e.toString()).toList();
@@ -147,10 +131,6 @@ class AuthorSearch {
         list.add(AuthorEntity().toModel(element));
       }
     }
-    log('... queryBuilderWhereMatchesKeyInQuery ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
-    }
     log('--- queryBuilderWhereMatchesKeyInQuery ---');
     return list.map((e) => e.toString()).toList();
   }
@@ -174,10 +154,6 @@ class AuthorSearch {
       for (var element in apiResponse.results!) {
         list.add(AuthorEntity().toModel(element));
       }
-    }
-    log('... queryBuilderWhereDoesNotMatchKeyInQuery ...');
-    for (var item in list) {
-      log('${item.toString()}\n');
     }
     log('--- queryBuilderWhereDoesNotMatchKeyInQuery ---');
     return list.map((e) => e.toString()).toList();

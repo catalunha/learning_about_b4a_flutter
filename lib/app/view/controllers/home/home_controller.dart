@@ -137,8 +137,10 @@ class HomeController extends GetxController with LoaderMixin, MessageMixin {
   authorSearch() async {
     AuthorSearch authorSearch = AuthorSearch();
     var dataList = <String>[];
-    dataList =
-        await authorSearch.queryBuilderIncludeObject(['typePointerGenre']);
+    dataList = await authorSearch.getAll();
+
+    // dataList =
+    //     await authorSearch.queryBuilderIncludeObject(['typePointerGenre']);
     // dataList = await authorSearch.queryBuilderWhereEqualToPointer(
     //     'typePointerGenre', 'Genre', 'mrsMiyXeuP');
     // dataList = await authorSearch.queryBuilderWhereMatchesQuery();
@@ -166,7 +168,6 @@ class HomeController extends GetxController with LoaderMixin, MessageMixin {
     ShapeSearch shapeSearch = ShapeSearch();
 
     var dataList = <String>[];
-    // dataList = await shapeSearch.getObject('5iLu1JOO9x');
     dataList = await shapeSearch.getAll();
     Get.to(() => ListPage(
           table: 'Shape',
@@ -213,6 +214,7 @@ class HomeController extends GetxController with LoaderMixin, MessageMixin {
   bookSearch() async {
     BookSearch bookSearch = BookSearch();
     var dataList = <String>[];
+    dataList = await bookSearch.getAll();
 
     // dataList = await bookSearch.queryBuilderIncludeObject(
     // ['typePointerPublisher', 'typePointerPublisher.typePointerShape'])

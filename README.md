@@ -1,5 +1,7 @@
 # learning_about_b4a_flutter
 
+Deixe uma issue com suas sugestões e,ou criticas sobre este material. Ajudará muito na remodelagem deste e construção de outros.
+
 Aqui compartilharei com você minhas experiências e aceito suas sugestões de como realizar um login utilizando o back4app.com. Este projeto servirá também pra eu refinar este código para outras projetos. No final aprenderemos juntos... 
 
 Para entender melhor este repositório é importantíssimo assistir a primeira parte disponivel neste outro repositorio:
@@ -38,12 +40,9 @@ Home | Editar profile | Listar tabela
 ---|---|---
 ![Tela](readme/home/f01.png)|![Tela](readme/profile/f04.png)|![Tela](readme/list/f01.png)|
 
---- PAREI AQUI ---
-
 # b4a - Class Profile
 Criar table Profile com os campos [email,typeString,typeFile,isActive]
 ![Tela](readme/profile/f01.png)
-
 
 # b4a - Class User
 Criar campo [profile] e apontar para Profile

@@ -137,7 +137,9 @@ class HomeController extends GetxController with LoaderMixin, MessageMixin {
   authorSearch() async {
     AuthorSearch authorSearch = AuthorSearch();
     var dataList = <String>[];
-    dataList = await authorSearch.getAll();
+    // dataList = await authorSearch.getAll();
+    dataList = await authorSearch
+        .getObject(objectId: 'wumssuy5eQ', include: ['typePointerGenre']);
 
     // dataList =
     //     await authorSearch.queryBuilderIncludeObject(['typePointerGenre']);

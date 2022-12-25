@@ -28,7 +28,7 @@ class AuthorModel {
     DateTime? typeDate,
     Map<String, dynamic>? typeObject,
     List<String>? typeArray,
-    GenreModel? typePointer,
+    GenreModel? typePointerGenre,
   }) {
     return AuthorModel(
       objectId: objectId ?? this.objectId,
@@ -37,7 +37,7 @@ class AuthorModel {
       typeNumber: typeNumber ?? this.typeNumber,
       typeDateTime: typeDate ?? typeDateTime,
       typeArray: typeArray ?? this.typeArray,
-      typePointerGenre: typePointer ?? typePointerGenre,
+      typePointerGenre: typePointerGenre ?? typePointerGenre,
     );
   }
 
@@ -65,7 +65,7 @@ class AuthorModel {
     }
 
     if (typePointerGenre != null) {
-      result.addAll({'typePointer': typePointerGenre!.toMap()});
+      result.addAll({'typePointerGenre': typePointerGenre!.toMap()});
     }
 
     return result;
@@ -81,8 +81,8 @@ class AuthorModel {
           ? DateTime.fromMillisecondsSinceEpoch(map['typeDate'])
           : null,
       typeArray: List<String>.from(map['typeArray']),
-      typePointerGenre: map['typePointer'] != null
-          ? GenreModel.fromMap(map['typePointer'])
+      typePointerGenre: map['typePointerGenre'] != null
+          ? GenreModel.fromMap(map['typePointerGenre'])
           : null,
     );
   }
@@ -94,6 +94,6 @@ class AuthorModel {
 
   @override
   String toString() {
-    return 'AuthorModel(objectId: $objectId, typeString: $typeString, typeBoolean: $typeBoolean, typeNumber: $typeNumber, typeDate: $typeDateTime, typeArray: $typeArray, typePointer: $typePointerGenre)';
+    return 'AuthorModel(objectId: $objectId, typeString: $typeString, typeBoolean: $typeBoolean, typeNumber: $typeNumber, typeDate: $typeDateTime, typeArray: $typeArray, typePointerGenre: $typePointerGenre)';
   }
 }

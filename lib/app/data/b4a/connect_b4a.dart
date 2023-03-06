@@ -1,16 +1,17 @@
 import 'dart:developer';
 
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 
 class ConnectB4A {
-  String _appId = '1';
-  String _clientKey = '1';
+  String _appId = 'x4uHx8hJECtAPiKo4Z2f8IK9OUKRtcuUBBaUBHM9';
+  String _clientKey = 'GoHjfXQ1fIClRQ6K9Gg9hc1dpKj90HJGRXcHeSrs';
 
   Future<void> getCredentials() async {
-    await dotenv.load(fileName: ".env");
-    _appId = dotenv.env['appId'] ?? _appId;
-    _clientKey = dotenv.env['clientKey'] ?? _clientKey;
+    // await dotenv.load(fileName: ".env");
+    // _appId = dotenv.env['appId'] ?? _appId;
+    // _clientKey = dotenv.env['clientKey'] ?? _clientKey;
+    _appId = 'x4uHx8hJECtAPiKo4Z2f8IK9OUKRtcuUBBaUBHM9';
+    _clientKey = 'GoHjfXQ1fIClRQ6K9Gg9hc1dpKj90HJGRXcHeSrs';
   }
 
   Future<bool> initialize({bool debug = false}) async {
